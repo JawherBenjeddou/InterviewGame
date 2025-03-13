@@ -538,6 +538,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6180108149430616254, guid: 4f63cb561445b5e4e948cded1c406e48,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 6295316678580204848, guid: 4f63cb561445b5e4e948cded1c406e48,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -678,6 +683,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 549180123996992435, guid: b7d70f9ae1045c14bb98ff7835baeb1e,
+        type: 3}
+      propertyPath: IgnoreTag
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 549180123996992435, guid: b7d70f9ae1045c14bb98ff7835baeb1e,
+        type: 3}
+      propertyPath: CameraCollisionFilter.m_Bits
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4932179026897548295, guid: b7d70f9ae1045c14bb98ff7835baeb1e,
         type: 3}
       propertyPath: m_LocalPosition.x
