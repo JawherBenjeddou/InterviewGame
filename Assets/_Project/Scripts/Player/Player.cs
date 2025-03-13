@@ -41,7 +41,19 @@ namespace InterviewGame.player
             float moveX = Input.GetAxis("Horizontal");
             float moveZ = Input.GetAxis("Vertical");
 
-            Vector3 moveDirection = new Vector3(moveX, 0, moveZ).normalized;
+            // Get camera forward and right vectors
+            Vector3 cameraForward = Camera.main.transform.forward;
+            Vector3 cameraRight = Camera.main.transform.right;
+
+            // Ignore the y component to keep movement on the ground
+            cameraForward.y = 0;
+            cameraRight.y = 0;
+
+            cameraForward.Normalize();
+            cameraRight.Normalize();
+
+            // Compute movement direction relative to camera
+            Vector3 moveDirection = (cameraForward * moveZ + cameraRight * moveX).normalized;
 
             if (moveDirection.magnitude >= 0.1f)
             {
@@ -54,6 +66,7 @@ namespace InterviewGame.player
                 m_rigidbody.velocity = new Vector3(0, m_rigidbody.velocity.y, 0);
             }
         }
+
 
         private void HandleJump()
         {
